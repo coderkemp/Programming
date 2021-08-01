@@ -4,36 +4,24 @@ public class BinarySubString {
 
 	public static int binarySubstringCount(int a, String str)
     {
-		int beginCount=-1,lastCount=-1,count=0;
+		int oneCount = 0;
 		
-		for(int i=0;i<str.length();i++) {
-			if(str.substring(i, i+1).equals("1"))
-				{
-				    beginCount = i;
-				    break;
-				}
-		}
-		for(int i=str.length()-1;i>0;i--) {
-			if(str.substring(i,i+1).equals("1"))
+		for(int i=0; i<a ; i++)
+		{
+			if(str.charAt(i)=='1')
 			{
-				lastCount = i;
-				break;
+				oneCount++;
 			}
 		}
 		
-		for(int j=beginCount;j<lastCount;j++)
-		{
-		    	
-		}
-		
-		
-        return 0;
+		return (oneCount*(oneCount-1))/2;
     }
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 		BinarySubString bs = new BinarySubString();
+		System.out.println(bs.binarySubstringCount(4, "1111"));
 		
 	}
 
